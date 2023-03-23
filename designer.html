@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <progress max="3" value="2" aria-label="progress bar step 1"> Step 1 </progress>
+    </header>
+    <main>
+        <portal src="index.html"></portal>
+        <body>
+            <h1>T-Shirt Designer</h1>
+            <div>
+                <img src="https://cdn.webshopapp.com/shops/41685/files/415607165/blank-t-shirt-zwart.jpg" alt="" width="100%">
+            </div>
+            <form action="overview.html">
+                <fieldset>
+                    <legend>Select your color</legend>
+                    <input type="radio" name="color" value="red">
+                    <label for="red">Red</label>
+
+                    <input type="radio" name="color" value="blue">
+                    <label for="blue">Blue</label>
+
+                    <input type="radio" name="color" value="green">
+                    <label for="green">Green</label>
+
+                    <input type="radio" name="color" value="yellow">
+                    <label for="yellow">Yellow</label>
+
+                    <input type="radio" name="color" value="black">
+                    <label for="black">Black</label>
+
+                    <input type="radio" name="color" value="white" checked>
+                    <label for="white">White</label>
+                </fieldset>
+                <br>
+                <details>
+                    <summary>Add text to your shirt</summary>
+                    <label for="text">text:</label>
+                    <input type="text" id="text" name="text">
+                </details>
+
+                <details>
+                    <summary>Add an image to your shirt</summary>
+                    <label for="image">Upload an image:</label>
+                    <input type="file" id="image" name="image">
+                </details>
+
+                <input type="submit" value="Submit">
+            </form>
+            <!-- <picture>
+                <source type="image/webp" srcset="images/weatherapp/background-weatherapp.webp" media="(max-width: 820px)">
+                <source type="image/png" srcset="images/weatherapp/background-weatherapp.png" media="(max-width: 820px)">
+                <source type="image/webp" srcset="images/weatherapp/background-weatherapp-large.webp" media="(min-width: 820px)">
+                <source type="image/png" srcset="images/weatherapp/background-weatherapp-large.png" media="(min-width: 820px)">
+                <img src="images/weatherapp/background-weatherapp.png" alt="">
+              </picture> -->
+
+        </body>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
