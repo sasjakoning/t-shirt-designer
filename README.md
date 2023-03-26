@@ -1,123 +1,105 @@
-# Browser Technologies @cmda-minor-web 2022 - 2023
 
-_Robuuste, toegankelijke websites ontwerpen en maken …_
+# T-shirt Designer
 
-Één van de mooiste [principes](https://www.w3.org/DesignIssues/Principles.html) van het web is dat iedereen met een computer en een browser het web kan gebruik. [Het web is voor iedereen](https://www.youtube.com/watch?v=UMNFehJIi0E). Het is geen gecontroleerde (programmeer) omgeving, je kan er gerust van uit gaan dat niemand precies hetzelfde te zien krijgt als wat jij in je browser ziet. Er zijn technische beperkingen, zoals afmetingen van de browser, grootte van het apparaat, manier van interactie, kwaliteit van de hardware, kwaliteit van het netwerk en er zijn mensen, allemaal verschillende mensen ...
+A simple not-entirely-functional t-shirt designer webapp made for the course Browser Technologies at the University of Applied Sciences Amsterdam. The main purpose of this webapp is to demonstrate the use of progressive enhancement. To create something can can remain mostly functional when it's only html, html/css and so on.
 
-In het vak Browser Technologies gaan we onderzoeken wat Progressive Enhancement is en hoe je dit kan toepassen om goede, robuuste, toegankelijke websites te maken. Voor iedereen. Het web is voor iedereen, in dit vak leer je hoe je daarvoor kan zorgen.
+<br>
 
-## Opdrachten
+## Live demo
 
-het vak bestaat uit 2 opdrachten. We werken eerst even aan opdracht 1. Op dag twee beginnen we te werken aan de eindopdracht.
+You can find a live demo of this webapp [here](https://sasjakoning.github.io/t-shirt-designer/).
 
-### Wat is Progressive-enhancement en hoe werkt het?
+## Installation
 
-Voor de eerste opdracht gaan we onderzoeken wat Progressive Enhancement is.
+This webapp is made using pure vanilla html/css and Javascript. To run it, you can simply open the index.html file in your browser.
 
-- [Opdracht 1 - NPM install Progressive Enhancement](assignments/opdracht-1.md)
+<br>
+<hr>
+<br>
 
+## Table of Contents
 
-### Eindopdracht ✨ Progressively Enhanced Browser Technology
+- [Process](#process)
+  * [Week 1](#week-1)
+    + [User Story](#user-story)
+    + [Requirements](#requirements)
+    + [Core functionality](#core-functionality)
+    + [Flowchart](#flowchart)
 
-Voor de eindopdracht ontwerp en maak je een interactieve toepassing volgens het principe van Progressive Enhancement. Zorg dat alle gebruikers, met alle browsers, in iedere context de toepassing zo goed mogelijk te zien, horen en/of voelen krijgen. De meest 'enhanced' versie is 'delightful UX', mooi en prettig om te gebruiken.
+<br>
 
-- [De eindopdracht - Progressive Enhanced Browser Technologie](assignments/eindopdracht.md)
+<!-- TOC --><a name="process"></a>
+## Process
 
+Below you will find my process of creating this webapp. I will explain the choices I made and why I made them. I'll also include feedback sessions and the changes I made based on the feedback. I will be doing these on a weekly basis.
 
-### Leerdoelen
-- _je leert wat Progressive enhancement is en hoe je dit kan toepassen._
-- _je leert Browser Technologies te onderzoeken, testen en implementeren als enhancement._
-- _je leert hoe je Feature Detection doet en wat je kan doen als een 'feature' niet werkt of wordt ondersteund._
+<br>
 
-[Rubric](https://icthva.sharepoint.com/:x:/s/FDMCI_EDU_CMD_Minor_Web_Design__Development/ET8k_fDG3VVPvqMkqx2uCusBR5-yeGaKo01meb9bDorLuQ?e=0hbmOk)
+<!-- TOC --><a name="week-1"></a>
+## Week 1
 
-## Planning & programma
+In the first week of this project I received the briefing. The goal of this project is to create a demo based on a chosen user story. I have to make sure the demo is usable (for atleast it's core functionality) by all users, on all browsers and in all contexts.
 
-| Planning  | Woensdag  |  Donderdag | Vrijdag  |
-|---|---|---|---|
-| [Week 1](#week-1)  | Intro, College + briefing opdracht 1 | Presentaties opdracht 1, briefing eindopdracht, college | Voortgangsgesprekken |
-| [Week 2](#week-2)  | College + Briefing De eindopdracht  | College + werken aan de opdracht | Feedbackgesprekken  |
-| [Week 3](#week-3)  | Beoordelingen!  |
+The demo should be build in three layers following the principles of progressive enhancement.
 
-### Week 1
+During this project it's not allowed to use polyfills and NPM packages. It is allowed to use server side rendering but not required.
 
-Het web is voor iedereen: Deze week gaan we onderzoeken wat Progressive Enhancement is en kennismaken met testen en het device lab.
+<br>
 
-#### Woensdag 22 maart
+<!-- TOC --><a name="user-story"></a>
+### User Story
 
-Browser Technolgies begint op woensdag. In het eerste college krijg je uitleg over het programma en over het nut van Progressive Enancement. Wat is dat eigenlijk? De meeste CMD studenten hebben dit waarschijnlijk al eens gehoord en misschien iets mee gedaan in blok Tech. Progressive Enhancement, oftewel PE, is een manier hoe je je de code van een website kan bouwen zodat alle gebruikers met alle browsers je website zo goed mogelijk te zien krijgen. Met PE kun je robuuste websites bouwen die het altijd doen. PE is een manier van denken.
+The user story I chose is the following:
 
-| Woensdag 22/3 | Wat  |
-|---|---|
-| 9:30 | College les 1 over het vak, wie, wat, waar en waarom |
-|  | [Briefing Opdracht 1 🛹 NPM install Progressive-Enhancement](assignments/opdracht-1.md) |
-| 16:00 | Weekly Nerd |
+> As a user I want to be able to design, save and order a nerdy t-shirt (with text and images). I also want to be able to continue where I left off when I come back to the site.
 
-##### Lezen voor les 1 📖
+<br>
 
-- [Everyone has JavaScript, right? by Stuart Langridge](https://kryogenix.org/code/browser/everyonehasjs.html)
+<!-- TOC --><a name="requirements"></a>
+### Requirements
 
+The requirements for this project are the following:
 
-#### Donderdag 23 maart
+- User info (Name, phone number or email)
+- Color of the t-shirt
+- Text on the t-shirt
+- Size of the t-shirt
+- Male/female t-shirt
+- Image on the t-shirt (or behind the shirt to compare)
+- Continue where you left off, review t-shirt design.
+- Validation, everything needs to be filled in, show clear error messages.
+- User should be able to create multiple designs and review them. There should be an overview page.
+- There should be an order page where the user can order the t-shirt.
 
-Donderdag gaan we opdracht 1 bekijken en bespreken. Als het goed is heb je een beeld gevormd van Progressive Enhancement. Tijdens de les duiken we hier met zijn allen dieper op in, gebaseerd op de resultaten van jullie onderzoek.
+Because the project will be a demo, Actually ordering the shirt doesn't have to be entirely functional.
 
-Zorg dat je de bevindingen van je onderzoek online kan presenteren. We gaan de hele feature lijst doorlopen en alle studenten kunnen laten zien wat ze hebben onderzocht, met voorbeelden, de problemen, cijfers en/of meningen. Bedenk ook hoe je de problemen zou kunnen oplossen.
+<br>
 
-Daarna krijg je uitleg over opdracht 2. Voor deze opdracht ga je proberen het web te laten 'breken' door (browser) features bewust uit te zetten. Wat gebeurt er als images, custom fonts, JavaScript, kleur, breedband internet niet optimaal werken?
+<!-- TOC --><a name="core-functionality"></a>
+### Core functionality
 
-| Donderdag 23/3 | Wat  |
-|---|---|
-| 9:30 | Opdracht 1 bespreken 🛹 |
-| 10:30 | [Briefing eindopdracht](assignments/eindopdracht.md) |
-| 15:30 | College les 2 over de UX van HTML |
-| 16:00 | Checkout per team |
+The core functionality of this project is the ability to design a t-shirt. This means the user should be able to choose a color, add text, add an image and choose a size. The user should also be able to order the design.
 
-Lezen voor les 2 📖
+<br>
 
-- [The unreasonable effectiveness of simple HTML by Terence Eden](https://shkspr.mobi/blog/2021/01/the-unreasonable-effectiveness-of-simple-html/)
+<!-- TOC --><a name="flowchart"></a>
+### Flowchart
 
-#### Vrijdag 25 maart
+To get a better understanding of the flow of the webapp I made a flowchart. This flowchart shows the different steps the user will take to create a t-shirt design.
 
-Vrijdag is het eerste voortgangsgesprek. Je bespreekt met de docent je keuze voor de eindopdracht. Er is alle tijd voor vragen, natuurlijk.
+<img src="images-readme/flowchart.jpg" alt="Flowchart" width="600"/>
 
-| Vrijdag 25/3 | Wat  |
-|---|---|
-| 9:30 | Voortgangsgesprekken |
-| 16:00 | Work Hard Play Hard |
+<br>
 
-### Week 2
+### Feedback session 1
 
-In week 2 ga je verder met de eindopdracht. We hebben in week 1 onderzocht wat PE is en welke feautures wel of niet goed worden ondersteund. Deze week gaan we leren hoe je een interactieve toepassing in 3 lagen kan ontwerpen en wat je kan doen als een browser een 'enhancement' niet kan tonen.
+The first feedback session of this project was held friday 24/03/2023. During this session I showed my progress so far with the flowchart and base html. I was told I was well on my way and that I should continue working the way I am now.
+ 
+<br>
 
-#### Woensdag 29 maart
+## Sources
 
-Woensdag krijg je een college over browsers, en alles (!) wat daarbij hoort. Daarna gaan we aan de slag: als je een interactieve toepassing ontwerpt die alle gebruikers, met alle browsers moeten kunnen zien, dan zul je moeten bedenken hoe je de toepassing in 3 lagen kan opbouwen, eerst bepaal je de core functionaliteit en de user-delight ... schetsen maar!
-
-| Woensdag 29/3 | Wat  |
-|---|---|
-| 9:30 | College van PPK over browsers! |
-| 16:00 | Checkout per team |
-
-#### Donderdag 30 maart
-
-Donderdag eindigt de les laat! Onze gastspreker kan pas om 18:00. Je kan de hele dag verder werken aan je eindopdracht.
-
-| Donderdag 30/3 | Wat  |
-|---|---|
-| 9:30 | Aan de slag |
-| 11:30 | Uitleg beoordelingen |
-| 18:00 | Gastcollege Aaron Gustafson |
-
-Lezen voor les 4 📖
-
-- [Be progressive by Jeremy Keith](https://adactio.com/journal/7706)
-
-#### Vrijdag 31 maart
-
-Vrijdag bespreken we in groepjes de vorderingen voor de eindopdracht. Zorg dat je vandaag weet welke browsers (en devices) jij gaat testen.
-
-| Vrijdag 31/3 | Wat  |
-|---|---|
-| 9:30 | Vorderingen bespreken & feedback in groepjes |
-| 16:00 | Work Hard Play Hard |
+- [Progressive Enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement)
+- [Course Github](https://github.com/cmda-minor-web/browser-technologies-2223)
+- [HTML elements default styling](https://sans.style/)
+- [List of HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference)
