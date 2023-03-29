@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User data</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <a href="overview.html" aria-label="Navigate back">
+            <img src="images/back-btn.svg" alt="back button">
+        </a>
+        <progress max="4" value="2" aria-label="progress bar step 2"> Step 2 </progress>
+    </header>
+    <main>
+        <h1>User data</h1>
+
+        <section>
+            <form action="/delivery.html">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+    
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+    
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Your address" required>
+    
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Your city" required>
+    
+                <label for="zipcode">Zipcode</label>
+                <input type="text" id="zipcode" name="zipcode" placeholder="Your zipcode" required>
+    
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" placeholder="Your country" required>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
