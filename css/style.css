@@ -1,12 +1,373 @@
-/* 
 :root {
-	--background: hsl(0, 0%, 0%);
-	--primary: hsl(0, 0%, 100%);
+	--white: #fff;
+	--light-100: #F8F9FA;
+	--light-200: #DBE0E5;
+	--light-300: #BEC7D0;
+	--light-400: #677A8E;
+	--accent-1: #5800FF;
+	--accent-2: #E900FF;
+	--accent-3: #FFAA00;
+	--dark: #111418;
+}
+
+/* Css reset */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* border: 1px solid red; */
+}
+
+/* --------- Generic styling -------- */
+
+body {
+	background-color: var(--light-100);
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: var(--dark);
+
+	max-width: 100dvw;
+
+	padding: 1rem;
+}
+
+main {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+picture {
+	border: 2px solid var(--light-300);
+	border-radius: 1rem;
+	background-color: var(--white);
+	margin-bottom: 2rem;
+}
+
+picture > img {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: var(--dark);
+}
+
+img {
+	max-width: 100%;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+h2 {
+	font-size: 1.25rem;
+	font-weight: 500;
+}
+
+p {
+	line-height: 160%;
+}
+
+header {
+	margin-bottom: 1rem;
+}
+
+header > section {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+header > section > a {
+	margin-right: 2rem;
+}
+
+progress {
+	appearance: none;
+	width: 100%;
+	height: 1rem;
+	margin-bottom: 1rem;
+}
+
+progress::-webkit-progress-value {
+	background-color: var(--accent-1);
+	border-radius: 20rem;
+}
+
+progress::-webkit-progress-bar {
+	background-color: var(--white);
+	border-radius: 20rem;
+	border: 2px solid var(--accent-1);
+}
+
+/* ---------------------------------- */
+/*            Form styling            */
+/* ---------------------------------- */
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+form label {
+	font-size: 1.25rem;
+	margin-left: .5rem;
+	margin-bottom: 1rem;
+}
+
+form select {
+	padding: 1rem;
+	border: 2px solid var(--light-300);
+	background-color: var(--white);
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	position: relative;
+}
+
+button {
+	padding: 1rem;
+	border: 2px solid var(--accent-2);
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+	background-color: var(--white);
+	font-weight: 700;
+
+	position: relative;
+}
+
+fieldset {
+	border: none;
+	margin-bottom: 1rem;
+}
+
+fieldset legend {
+	font-size: 1.25rem;
+	margin-bottom: 1rem;
+	padding-left: 2rem;
+	position: relative;
+}
+
+fieldset legend::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1.5rem;
+	height: 1.5rem;
+	background-image: url(../images/icon-pencil.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+
+}
+
+fieldset > div {
+	display: flex;
+	max-width: calc(100vw - 2rem);
+	overflow: scroll;
+	padding-right: 2rem;
+}
+
+fieldset > div::-webkit-scrollbar {
+	appearance: none;
+}
+
+fieldset label {
+	margin: 0;
+	width: 4rem;
+	height: 4rem;
+	aspect-ratio: 1/1;
+	font-size: 0;
+	border-radius: 1rem;
+	border: 2px solid var(--light-300);
+
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: var(--white);
+}
+
+fieldset label:not(:last-child) {
+	margin-right: 1rem;
+}
+
+fieldset label:nth-of-type(1){
+	background-image: url(../images/tshirt-white-large.png);
+}
+
+fieldset label:nth-of-type(2){
+	background-image: url(../images/tshirt-black-large.png);
+}
+
+fieldset label:nth-of-type(3){
+	background-image: url(../images/tshirt-red-large.png);
+}
+
+fieldset label:nth-of-type(4){
+	background-image: url(../images/tshirt-blue-large.png);	 
+}
+
+fieldset label:nth-of-type(5){
+	background-image: url(../images/tshirt-green-large.png);
+}
+
+fieldset label:nth-of-type(6){
+	background-image: url(../images/tshirt-yellow-large.png);
+}
+
+fieldset input[type="radio"]:checked + label {
+	border: 4px solid var(--accent-3);
+}
+
+fieldset input {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 0;
+	/* display: none; */
+}
+
+details {
+	width: 100%;
+	font-size: 1.25rem;
+	margin-bottom: 2rem;
+	border-bottom: 2px solid var(--light-300);
+	position: relative;
+}
+
+details > summary {
+	list-style: none;
+	padding-bottom: 1rem;
+	padding-left: 2rem;
+}
+
+details::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	rotate: 180deg;
+	transform-origin: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-image: url(../images/icon-chevron.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	transition: rotate .2s ease-in-out;
+}
+ 
+details[open]::before {
+	rotate: 270deg;
+}
+
+details label {
+	margin-right: 1rem;
+}
+
+details > div {
+	display: flex;
+	flex-direction: column;
+}
+
+details > div > input {
+	width: 100%;
+}
+
+input[type="text"] {
+	padding: 1rem;
+	border: 2px solid var(--light-300);
+	background-color: var(--white);
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	position: relative;
+}
+
+input[type="file"] {
+	padding: 1rem;
+	border: 2px solid var(--light-300);
+	background-color: var(--white);
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	position: relative;
+}
+
+input[type="file"] + label {
+/* File upload button styles */
+	display: none;
+}
+
+input[type="file"]:focus + label,
+input[type="file"] + label:hover {
+/* File upload hover state button styles */
+}
+
+input[type="file"]:focus + label {
+/* File upload focus state button styles */
 }
 
 
-html, * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-} */
+
+/* ---------------------------------- */
+/*              Utilities             */
+/* ---------------------------------- */
+
+.btn-link {
+	padding: 1rem;
+	border: 2px solid var(--accent-3);
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+	padding-left: 3.5rem;
+	background-color: var(--white);
+	font-weight: 700;
+
+	position: relative;
+}
+
+
+/* ---------------------------------- */
+/*              Homepage              */
+/* ---------------------------------- */
+
+.home h1 {
+	font-size: 3rem;
+	margin-bottom: 2rem;
+}
+
+.home section {
+	display: flex;
+	flex-direction: column;
+}
+
+.home .btn-link::before {
+	content: '';
+	position: absolute;
+	height: 1.5rem;
+	width: 1.5rem;
+	top: 50%;
+	left: 1rem;
+	transform: translate(0%, -50%);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.home .btn-link:nth-child(1)::before {
+	background-image: url(../images/icon-tshirt.svg);
+}
+
+.home .btn-link:nth-child(2)::before {
+	background-image: url(../images/icon-cart.svg);
+}
+
+/* ---------------------------------- */
+/*             Specs page             */
+/* ---------------------------------- */
