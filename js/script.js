@@ -240,7 +240,7 @@ function createOrderTable(orderObject, container) {
     const th4 = document.createElement("th");
     th4.textContent = "Image:";
     const td4 = document.createElement("td");
-    td4.textContent = orderObject.image || "None"; // if product image is not found in local storage, use default value
+    td4.textContent = orderObject.imageUrl? "Yes" : "No"; // if product image is not found in local storage, use default value
     tr2.appendChild(th3);
     tr2.appendChild(td3);
     tr2.appendChild(th4);

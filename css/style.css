@@ -391,5 +391,9 @@ input[type="file"]:focus + label {
 }
 
 /* ---------------------------------- */
-/*             Specs page             */
+/*            Overview page           */
 /* ---------------------------------- */
+
+.orders > section > table th {
+	text-align: start;
+}
