@@ -2,7 +2,7 @@ var id = "id=" + Math.random().toString(16).slice(2)
 
 // switch case based on url path
 
-var path = window.location.pathname;
+const path = window.location.pathname;
 console.log(path)
 
 // create order object to eventually send to localstorage
@@ -16,6 +16,9 @@ let order = {
     imageUrl: '',
 };
 
+let orderId = '';
+let orderExists = '';
+
 switch (path) {
     case "/":
     case "/index.html":
@@ -26,8 +29,8 @@ switch (path) {
         break;
     case "/specs.html":
 
-        const orderId = window.location.hash.substring(1);
-        const orderExists = JSON.parse(localStorage.getItem(`order${orderId}`));
+        orderId = window.location.hash.substring(1);
+        orderExists = JSON.parse(localStorage.getItem(`order${orderId}`));
         
         const specsForm = document.querySelector('form');
 
@@ -41,50 +44,122 @@ switch (path) {
             specsForm.size.value = orderExists.size;
             specsForm.type.value = orderExists.type;
 
+            specsForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                console.log('form submitted');
+                
+                // add form values to order object
+                orderExists.size = specsForm.size.value;
+                orderExists.type = specsForm.type.value;
+    
+                orderExists.id = orderId;
+    
+                // add order object to localstorage
+                localStorage.setItem(`order${orderId}`, JSON.stringify(orderExists));
+                console.log(order);
+    
+                // redirect to designer.html
+                window.location.href = `designer.html#${orderId}`;
+            });
+        }else {
+            specsForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                console.log('form submitted');
+                
+                // add form values to order object
+                order.size = specsForm.size.value;
+                order.type = specsForm.type.value;
+    
+                order.id = orderId;
+    
+                // add order object to localstorage
+                localStorage.setItem(`order${orderId}`, JSON.stringify(order));
+                console.log(order);
+    
+                // redirect to designer.html
+                window.location.href = `designer.html#${orderId}`;
+            });
         }
-
-        specsForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            console.log('form submitted');
-            
-            // add form values to order object
-            order.size = specsForm.size.value;
-            order.type = specsForm.type.value;
-
-            order.id = orderId;
-
-            // add order object to localstorage
-            localStorage.setItem(`order${orderId}`, JSON.stringify(order));
-            console.log(order);
-
-            // redirect to designer.html
-            window.location.href = `designer.html#${orderId}`;
-        });
         
         break;
     case "/designer.html":
-
         // get order object from localstorage
-        order = JSON.parse(localStorage.getItem('order'));
-        console.log(order);
-
+        orderId = window.location.hash.substring(1);
+        orderExists = JSON.parse(localStorage.getItem(`order${orderId}`));
         const designForm = document.querySelector('form');
+
+        if(orderExists){
+            console.log("order id exists");
+
+            designForm.color.value = orderExists.color;
+            designForm.text.value = orderExists.text;
+            designForm.textColor.value = orderExists.textColor;
+            // designForm.image.value = orderExists.imageUrl;
+        }
+
+
+        const figure = document.querySelector('figure');
+        const shirtImage = document.querySelector('figure > img');
+        const colorInputs = document.querySelectorAll('input[name="color"]');
+        
+        // change img src based on color input
+        colorInputs.forEach(input => {
+            if(input.checked){
+                shirtImage.src = `images/tshirt-${input.value}-large.png`;
+            }
+            input.addEventListener('change', (e) => {
+                shirtImage.src = `images/tshirt-${e.target.value}-large.png`;
+            });
+        });
+
+        const shirtText = document.querySelector('figure > figcaption');
+        const shirtTextInput = document.querySelector('#text');
+        shirtText.textContent = shirtTextInput.value;
+        const shirtTextColor = document.querySelector('#textColor');
+        document.documentElement.style.setProperty('--textColor', shirtTextColor.value);
+
+        // change text color based on color input
+        shirtTextColor.addEventListener('change', (e) => {
+            document.documentElement.style.setProperty('--textColor', e.target.value);
+        });
+        
+        // change text content based on text input
+        shirtTextInput.addEventListener('input', (e) => {
+            shirtText.textContent = e.target.value;
+        });
+
+
+        const fileInput = document.querySelector('#image');
+        const uploadImage = document.querySelector(".overlayImg");
+        uploadImage.src = orderExists.imageUrl;
+
+        fileInput.addEventListener('change', (e) => {
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.addEventListener('load', (e) => {
+                const image = e.target.result;
+                orderExists.imageUrl = image;
+                console.log(image)
+            });
+            reader.readAsDataURL(file);
+            uploadImage.src = URL.createObjectURL(file);
+        });
+
 
         designForm.addEventListener('submit', (e) => {
             e.preventDefault();
             console.log('form submitted');
 
             // add form values to order object
-            order.color = designForm.color.value;
-            order.text = designForm.text.value;
-            order.textColor = designForm.textColor.value;
-            order.imageUrl = designForm.image.value;
-
+            orderExists.color = designForm.color.value;
+            orderExists.text = designForm.text.value;
+            orderExists.textColor = designForm.textColor.value;
+            // orderExists.imageUrl = designForm.image.value;
+    
             // edit order object to localstorage
 
-            localStorage.setItem('order', JSON.stringify(order));
-
-            console.log(order);
+            localStorage.setItem(`order${orderId}`, JSON.stringify(orderExists));
 
             // redirect to overview.html
 
@@ -201,4 +276,8 @@ function createOrderTable(orderObject, container) {
     section.appendChild(link);
 
     container.appendChild(section);
+}
+
+function uploadImage() {
+    const fileInput = document.querySelector('#image');
 }

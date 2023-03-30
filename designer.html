@@ -19,11 +19,11 @@
     <main>
         <body>
             
-                <picture>
-                    <source type="image/png" srcset="images/tshirt-white-small.png" media="(max-width: 820px)">
-                    <source type="image/png" srcset="images/tshirt-white-large.png" media="(min-width: 820px)">
-                    <img src="images/tshirt-white.webp" alt="white t-shirt">
-              </picture>
+                <figure>
+                    <img src="images/tshirt-white-large.png" alt="white t-shirt">
+                    <img class="overlayImg">
+                    <figcaption></figcaption>
+                </figure>
             
             <form action="overview.html">
                 <fieldset>
@@ -63,9 +63,13 @@
 
                 <details>
                     <summary>Add an image to your shirt (Optional)</summary>
-                    <div>
+                    <!-- <div>
                         <label for="image">Add an image link:</label>
                         <input type="url" id="image" name="image">
+                    </div> -->
+                    <div>
+                        <label for="image">Add an image:</label>
+                        <input type="file" id="image" name="image">
                     </div>
                 </details>
 

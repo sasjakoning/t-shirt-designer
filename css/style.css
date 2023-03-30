@@ -8,6 +8,7 @@
 	--accent-2: #E900FF;
 	--accent-3: #FFAA00;
 	--dark: #111418;
+	--textColor: #111418;
 }
 
 /* Css reset */
@@ -39,15 +40,36 @@ main {
 	justify-content: center;
 }
 
-picture {
+figure {
 	border: 2px solid var(--light-300);
 	border-radius: 1rem;
 	background-color: var(--white);
 	margin-bottom: 2rem;
+	position: relative;
 }
 
-picture > img {
+figure > img {
 	margin: 0;
+}
+
+figure > figcaption {
+	position: absolute;
+    top: 20%;
+    left: 50%;
+	max-width: 60%;
+	word-break: break-word;
+	text-align: center;
+	transform: translate(-50%, 0%);
+	font-size: 2rem;
+	color: var(--textColor);
+}
+
+figure .overlayImg {
+	position: absolute;
+    width: 40%;
+    top: 30%;
+    left: 50%;
+	transform: translate(-50%, 0%);
 }
 
 a {
