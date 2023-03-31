@@ -208,76 +208,38 @@ switch (path) {
 function createOrderTable(orderObject, container) {
     const section = document.createElement("section");
 
-    // create h2 element and set text content from local storage
-    const h2 = document.createElement("h2");
-    h2.textContent = "T-shirt"; 
-    section.appendChild(h2);
+    section.innerHTML = `
+        <h2>${orderObject.type} T-shirt</h2>
+        <figure>
+            <img src="images/tshirt-${orderObject.color}-large.png" alt="example of designed tshirt"/>
 
-    // create table element
-    const table = document.createElement("table");
+            ${orderObject.imageUrl? `<img src="${orderObject.imageUrl}" alt="Uploaded image on tshirt" class="overlayImg"/>` : ""}
 
-    // create first row of table
-    const tr1 = document.createElement("tr");
-    const th1 = document.createElement("th");
-    th1.textContent = "Color:";
-    const td1 = document.createElement("td");
-    td1.textContent = orderObject.color; 
-    const th2 = document.createElement("th");
-    th2.textContent = "Size:";
-    const td2 = document.createElement("td");
-    td2.textContent = orderObject.size; 
-    tr1.appendChild(th1);
-    tr1.appendChild(td1);
-    tr1.appendChild(th2);
-    tr1.appendChild(td2);
+            <figcaption style="color: ${orderObject.textColor}">${orderObject.text? orderObject.text : ""}</figcaption>
+        </figure>
+        <table>
+            <tr>
+                <th>Color:</th>
+                <td>${orderObject.color}</td>
+                <th>Size:</th>
+                <td>${orderObject.size}</td>
+            </tr>
+            <tr>
+                <th>Text:</th>
+                <td>${orderObject.text? orderObject.text : "None"}</td>
+                <th>Image:</th>
+                <td>${orderObject.imageUrl? "Yes" : "No"}</td>
+            </tr>
+            <tr>
+                <th>Text color:</th>
+                <td>${orderObject.text? orderObject.textColor : "None"}</td>
+                <th>Amount:</th>
+                <td>1</td>
+            </tr>
+        </table>
+        <a href="specs.html#${orderObject.id}">Edit</a>
+    `
 
-    // create second row of table
-    const tr2 = document.createElement("tr");
-    const th3 = document.createElement("th");
-    th3.textContent = "Text:";
-    const td3 = document.createElement("td");
-    td3.textContent = orderObject.text || "None"; // if product text is not found in local storage, use default value
-    const th4 = document.createElement("th");
-    th4.textContent = "Image:";
-    const td4 = document.createElement("td");
-    td4.textContent = orderObject.imageUrl? "Yes" : "No"; // if product image is not found in local storage, use default value
-    tr2.appendChild(th3);
-    tr2.appendChild(td3);
-    tr2.appendChild(th4);
-    tr2.appendChild(td4);
-
-    // create third row of table
-    const tr3 = document.createElement("tr");
-    const th5 = document.createElement("th");
-    th5.textContent = "Text color:";
-    const td5 = document.createElement("td");
-    td5.textContent = orderObject.textColor || "None"; // if product text color is not found in local storage, use default value
-    const th6 = document.createElement("th");
-    th6.textContent = "Amount:";
-    const td6 = document.createElement("td");
-    td6.textContent = "1"; // if product amount is not found in local storage, use default value
-    tr3.appendChild(th5);
-    tr3.appendChild(td5);
-    tr3.appendChild(th6);
-    tr3.appendChild(td6);
-
-    // add rows to table
-    table.appendChild(tr1);
-    table.appendChild(tr2);
-    table.appendChild(tr3);
-
-    // create link element and set attributes
-    const link = document.createElement("a");
-    link.href = `specs.html#${orderObject.id}`;
-    link.textContent = "Edit";
-
-    // add elements to section
-    section.appendChild(table);
-    section.appendChild(link);
-
+    
     container.appendChild(section);
-}
-
-function uploadImage() {
-    const fileInput = document.querySelector('#image');
 }
