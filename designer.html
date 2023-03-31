@@ -14,16 +14,15 @@
             </a>
             <h1>Design your t-shirt</h1>
         </section>
-        <progress max="3" value="2" aria-label="progress bar step 1"> Step 1 </progress>
     </header>
     <main>
         <body>
             
-                <picture>
-                    <source type="image/png" srcset="images/tshirt-white-small.png" media="(max-width: 820px)">
-                    <source type="image/png" srcset="images/tshirt-white-large.png" media="(min-width: 820px)">
-                    <img src="images/tshirt-white.webp" alt="white t-shirt">
-              </picture>
+                <figure>
+                    <img src="images/tshirt-white-large.png" alt="white t-shirt">
+                    <img class="overlayImg">
+                    <figcaption></figcaption>
+                </figure>
             
             <form action="overview.html">
                 <fieldset>
@@ -46,7 +45,6 @@
     
                         <input type="radio" id="yellow" name="color" value="yellow">
                         <label for="yellow">Yellow</label>
-    
                     </div>
                 </fieldset>
                 <br>
@@ -56,13 +54,21 @@
                         <label for="text">text:</label>
                         <input type="text" id="text" name="text">
                     </div>
+                    <div>
+                        <label for="textColor">text color:</label>
+                        <input type="color" id="textColor" name="text-color">
+                    </div>
                 </details>
 
                 <details>
                     <summary>Add an image to your shirt (Optional)</summary>
+                    <!-- <div>
+                        <label for="image">Add an image link:</label>
+                        <input type="url" id="image" name="image">
+                    </div> -->
                     <div>
-                        <label for="image">Upload an image:</label>
-                        <input type="file" id="image" name="image">
+                        <label for="image">Add an image:</label>
+                        <input type="file" id="image" name="image" accept="image/*;maxFileSize=1572864">
                     </div>
                 </details>
 

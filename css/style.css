@@ -8,6 +8,7 @@
 	--accent-2: #E900FF;
 	--accent-3: #FFAA00;
 	--dark: #111418;
+	--textColor: #111418;
 }
 
 /* Css reset */
@@ -33,21 +34,44 @@ body {
 }
 
 main {
+	max-width: 30rem;
+	margin: auto;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
-picture {
+figure {
 	border: 2px solid var(--light-300);
 	border-radius: 1rem;
 	background-color: var(--white);
 	margin-bottom: 2rem;
+	position: relative;
 }
 
-picture > img {
+figure > img {
 	margin: 0;
+}
+
+figure > figcaption {
+	position: absolute;
+    top: 20%;
+    left: 50%;
+	max-width: 60%;
+	word-break: break-word;
+	text-align: center;
+	transform: translate(-50%, 0%);
+	font-size: 2rem;
+	color: var(--textColor);
+}
+
+figure .overlayImg {
+	position: absolute;
+    width: 40%;
+    top: 30%;
+    left: 50%;
+	transform: translate(-50%, 0%);
 }
 
 a {
@@ -77,6 +101,8 @@ p {
 
 header {
 	margin-bottom: 1rem;
+	max-width: 30rem;
+	margin: auto;
 }
 
 header > section {
@@ -369,5 +395,44 @@ input[type="file"]:focus + label {
 }
 
 /* ---------------------------------- */
-/*             Specs page             */
+/*            Overview page           */
 /* ---------------------------------- */
+
+.orders > section {
+	padding: 1rem;
+	border: 2px solid var(--light-300);
+	border-radius: 1rem;
+}
+
+.orders > section:not(:last-child){
+	margin-bottom: 1rem;
+}
+
+.orders h2 {
+	margin-bottom: 1rem;
+}
+
+.orders h2:first-letter{
+	text-transform: capitalize
+}
+
+.orders table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 1.25rem 0;
+  }
+  
+  .orders  th {
+	font-weight: 500;
+	text-align: left;
+	padding: .5rem;
+	border-bottom: 2px solid var(--light-300);
+  }
+  
+  .orders  td {
+	padding: .5rem;
+	text-align: left;
+	vertical-align: middle;
+	border-bottom: 2px solid var(--light-300);
+  }
+  
