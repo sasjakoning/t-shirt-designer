@@ -19,12 +19,19 @@ This webapp is made using pure vanilla html/css and Javascript. To run it, you c
 
 ## Table of Contents
 
-- [Process](#process)
-  * [Week 1](#week-1)
-    + [User Story](#user-story)
-    + [Requirements](#requirements)
-    + [Core functionality](#core-functionality)
-    + [Flowchart](#flowchart)
+- [T-shirt Designer](#t-shirt-designer)
+  - [Live demo](#live-demo)
+  - [Installation](#installation)
+  - [Table of Contents](#table-of-contents)
+  - [Process](#process)
+  - [Week 1](#week-1)
+    - [User Story](#user-story)
+    - [Requirements](#requirements)
+    - [Core functionality](#core-functionality)
+    - [Flowchart](#flowchart)
+    - [Feedback session 1](#feedback-session-1)
+    - [Feedback session 2](#feedback-session-2)
+  - [Sources](#sources)
 
 <br>
 
@@ -94,6 +101,12 @@ To get a better understanding of the flow of the webapp I made a flowchart. This
 ### Feedback session 1
 
 The first feedback session of this project was held friday 24/03/2023. During this session I showed my progress so far with the flowchart and base html. I was told I was well on my way and that I should continue working the way I am now.
+ 
+<br>
+
+### Feedback session 2
+
+The second (and last) feedback session was held friday 31/03/2023. I showed my progress so far and got some feedback on the layout of my app, which could use some improvements and edits for the desktop version, ann got tips to improve functionality when there was no CSS or Javascript available.
  
 <br>
 
