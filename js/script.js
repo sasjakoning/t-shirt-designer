@@ -97,20 +97,19 @@ switch (path) {
             // designForm.image.value = orderExists.imageUrl;
         }
 
-
-        const figure = document.querySelector('figure');
-        const shirtImage = document.querySelector('figure > img');
-        const colorInputs = document.querySelectorAll('input[name="color"]');
+        // const figure = document.querySelector('figure');
+        // const shirtImage = document.querySelector('figure > img');
+        // const colorInputs = document.querySelectorAll('input[name="color"]');
         
-        // change img src based on color input
-        colorInputs.forEach(input => {
-            if(input.checked){
-                shirtImage.src = `images/tshirt-${input.value}-large.png`;
-            }
-            input.addEventListener('change', (e) => {
-                shirtImage.src = `images/tshirt-${e.target.value}-large.png`;
-            });
-        });
+        // // change img src based on color input
+        // colorInputs.forEach(input => {
+        //     if(input.checked){
+        //         shirtImage.src = `images/tshirt-${input.value}-large.png`;
+        //     }
+        //     input.addEventListener('change', (e) => {
+        //         shirtImage.src = `images/tshirt-${e.target.value}-large.png`;
+        //     });
+        // });
 
         const shirtText = document.querySelector('figure > figcaption');
         const shirtTextInput = document.querySelector('#text');
