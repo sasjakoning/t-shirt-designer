@@ -306,7 +306,7 @@ details > div > input {
 	width: 100%;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
 	padding: 1rem;
 	border: 2px solid var(--light-300);
 	background-color: var(--white);
@@ -373,7 +373,7 @@ input[type="file"]:focus + label {
 	flex-direction: column;
 }
 
-.home .btn-link::before {
+.home .btn-link::before, .orders section > .btn-link::before {
 	content: '';
 	position: absolute;
 	height: 1.5rem;
@@ -435,4 +435,40 @@ input[type="file"]:focus + label {
 	vertical-align: middle;
 	border-bottom: 2px solid var(--light-300);
   }
-  
+
+.orders section > .btn-link {
+	margin-top: 1rem;
+	margin-bottom: 0;
+	display: flex;
+}
+
+.orders section > .btn-link:nth-of-type(1)::before {
+	background-image: url(../images/icon-pencil.svg);
+}
+
+.orders section > .btn-link:nth-of-type(2)::before {
+	background-image: url(../images/icon-tag.svg);
+}
+
+/* ---------------------------------- */
+/*            Delivery page           */
+/* ---------------------------------- */
+
+.deliveryForm > input[type="radio"] {
+	appearance: none;
+}
+
+.deliveryForm > label {
+	display: flex;
+	align-items: center;
+	margin-left: 0;
+
+	padding: 1rem;
+	border: 2px solid var(--light-300);
+	border-radius: 1rem;
+	background-color: var(--white);
+}
+
+.deliveryForm > input[type="radio"]:checked + label {
+	border: 2px solid var(--accent-3);
+}
