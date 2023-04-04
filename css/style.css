@@ -43,12 +43,32 @@ main {
 	justify-content: center;
 }
 
+/* @media screen and (min-width: 40rem) {
+	.designer main {
+		flex-direction: row;
+	}
+
+	.designer figure {
+		width: 40%;
+		margin-right: 1rem;
+		max-height: 15rem;
+	}
+
+	.designer form {
+		width: 50%;
+	}
+
+	
+}
+	 */
+
 figure {
 	border: 2px solid var(--light-300);
 	border-radius: 1rem;
 	background-color: var(--white);
 	margin-bottom: 2rem;
 	position: relative;
+	padding: 1rem;
 }
 
 figure > img {
@@ -160,6 +180,7 @@ form select {
 }
 
 button {
+	color: var(--dark);
 	padding: 1rem;
 	border: 2px solid var(--accent-2);
 	border-radius: 1rem;
@@ -374,7 +395,7 @@ input[type="file"]:focus + label {
 	flex-direction: column;
 }
 
-.home .btn-link::before, .orders section > .btn-link::before {
+.home .btn-link::before, .orders .btn-link::before {
 	content: '';
 	position: absolute;
 	height: 1.5rem;
@@ -443,13 +464,58 @@ input[type="file"]:focus + label {
 	display: flex;
 }
 
-.orders section > .btn-link:nth-of-type(1)::before {
+.orders section > div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.orders .orderSettings {
+	display: flex;
+	flex-direction: column;
+	width: calc(50% - 1rem);
+}
+
+.orders section > div figure {
+	width: 50%;
+	margin-bottom: 1rem;
+}
+
+.orders section > div figure figcaption {
+	font-size: .7rem;
+	top: 30%;
+}
+
+.orders section > div figure img {
+	width: 30%;
+	top: 40%;
+}
+
+.orders .orderSettings > .btn-link:nth-of-type(1)::before {
 	background-image: url(../images/icon-pencil.svg);
 }
 
-.orders section > .btn-link:nth-of-type(2)::before {
+.orders .orderSettings > .btn-link:nth-of-type(2)::before {
 	background-image: url(../images/icon-tag.svg);
 }
+
+.noOrders {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.noOrders > p {
+	margin-bottom: 1rem;
+}
+
+.noOrders .btn-link {
+	padding-left: 1rem;
+}
+
+.noOrders .btn-link::before {
+	display: none;
+}
+
 
 /* ---------------------------------- */
 /*            Delivery page           */
