@@ -20,12 +20,12 @@
 
         <section>
             <h2>Do you want home delivery or pickup?</h2>
-            <form action="/completed.html">
+            <form action="/completed.html" class="deliveryForm">
 
+                <input type="radio" id="delivery" name="delivery" value="delivery" required checked>
                 <label for="delivery">Delivery</label>
-                <input type="radio" id="delivery" name="delivery" value="delivery" required>
-                <label for="pickup">Pickup</label>
                 <input type="radio" id="pickup" name="delivery" value="pickup" required>
+                <label for="pickup">Pickup</label>
 
                 <button type="submit">Submit order</button>
             </form>

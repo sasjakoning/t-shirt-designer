@@ -7,6 +7,7 @@
 	--accent-1: #5800FF;
 	--accent-2: #E900FF;
 	--accent-3: #FFAA00;
+	--invalid: #de0000;
 	--dark: #111418;
 	--textColor: #111418;
 }
@@ -42,12 +43,32 @@ main {
 	justify-content: center;
 }
 
+/* @media screen and (min-width: 40rem) {
+	.designer main {
+		flex-direction: row;
+	}
+
+	.designer figure {
+		width: 40%;
+		margin-right: 1rem;
+		max-height: 15rem;
+	}
+
+	.designer form {
+		width: 50%;
+	}
+
+	
+}
+	 */
+
 figure {
 	border: 2px solid var(--light-300);
 	border-radius: 1rem;
 	background-color: var(--white);
 	margin-bottom: 2rem;
 	position: relative;
+	padding: 1rem;
 }
 
 figure > img {
@@ -159,6 +180,7 @@ form select {
 }
 
 button {
+	color: var(--dark);
 	padding: 1rem;
 	border: 2px solid var(--accent-2);
 	border-radius: 1rem;
@@ -306,7 +328,7 @@ details > div > input {
 	width: 100%;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
 	padding: 1rem;
 	border: 2px solid var(--light-300);
 	background-color: var(--white);
@@ -373,7 +395,7 @@ input[type="file"]:focus + label {
 	flex-direction: column;
 }
 
-.home .btn-link::before {
+.home .btn-link::before, .orders .btn-link::before {
 	content: '';
 	position: absolute;
 	height: 1.5rem;
@@ -435,4 +457,136 @@ input[type="file"]:focus + label {
 	vertical-align: middle;
 	border-bottom: 2px solid var(--light-300);
   }
-  
+
+.orders section > .btn-link {
+	margin-top: 1rem;
+	margin-bottom: 0;
+	display: flex;
+}
+
+.orders section > div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.orders .orderSettings {
+	display: flex;
+	flex-direction: column;
+	width: calc(50% - 1rem);
+}
+
+.orders section > div figure {
+	width: 50%;
+	margin-bottom: 1rem;
+}
+
+.orders section > div figure figcaption {
+	font-size: .7rem;
+	top: 30%;
+}
+
+.orders section > div figure img {
+	width: 30%;
+	top: 40%;
+}
+
+.orders .orderSettings > .btn-link:nth-of-type(1)::before {
+	background-image: url(../images/icon-pencil.svg);
+}
+
+.orders .orderSettings > .btn-link:nth-of-type(2)::before {
+	background-image: url(../images/icon-tag.svg);
+}
+
+.noOrders {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.noOrders > p {
+	margin-bottom: 1rem;
+}
+
+.noOrders .btn-link {
+	padding-left: 1rem;
+}
+
+.noOrders .btn-link::before {
+	display: none;
+}
+
+
+/* ---------------------------------- */
+/*            Delivery page           */
+/* ---------------------------------- */
+
+.deliveryForm {
+	margin-top: 1rem;
+}
+
+.deliveryForm > input[type="radio"] {
+	appearance: none;
+}
+
+.deliveryForm > label {
+	display: flex;
+	align-items: center;
+	margin-left: 0;
+
+	padding: 1rem;
+	border: 2px solid var(--light-300);
+	border-radius: 1rem;
+	background-color: var(--white);
+}
+
+.deliveryForm > input[type="radio"]:checked + label {
+	border: 2px solid var(--accent-3);
+}
+
+/* ---------------------------------- */
+/*           Completed page           */
+/* ---------------------------------- */
+
+.completed h1 {
+	margin-bottom: 1rem;
+}
+
+.completed p {
+	margin-bottom: 1rem;
+}
+
+.completed .btn-link {
+	padding-left: 1rem;
+}
+
+
+/* ---------------------------------- */
+/*             Design page            */
+/* ---------------------------------- */
+
+/* change shirt svg color based on input */
+
+.designer:has(fieldset input:nth-of-type(1):checked) .shirtImg > path {
+	fill: white;
+}
+
+.designer:has(fieldset input:nth-of-type(2):checked) .shirtImg > path {
+	fill: black;
+}
+
+.designer:has(fieldset input:nth-of-type(3):checked) .shirtImg > path {
+	fill: red;
+}
+
+.designer:has(fieldset input:nth-of-type(4):checked) .shirtImg > path {
+	fill: blue;
+}
+
+.designer:has(fieldset input:nth-of-type(5):checked) .shirtImg > path {
+	fill: green;
+}
+
+.designer:has(fieldset input:nth-of-type(6):checked) .shirtImg > path {
+	fill: yellow;
+}
