@@ -77,7 +77,7 @@ figure > img {
 
 figure > figcaption {
 	position: absolute;
-    top: 20%;
+    top: 22%;
     left: 50%;
 	max-width: 60%;
 	word-break: break-word;
@@ -90,7 +90,7 @@ figure > figcaption {
 figure .overlayImg {
 	position: absolute;
     width: 40%;
-    top: 30%;
+    top: 37%;
     left: 50%;
 	transform: translate(-50%, 0%);
 }
@@ -138,6 +138,7 @@ header > section > a {
 
 progress {
 	appearance: none;
+	-webkit-appearance: none;
 	width: 100%;
 	height: 1rem;
 	margin-bottom: 1rem;
@@ -236,6 +237,7 @@ fieldset label {
 	font-size: 0;
 	border-radius: 1rem;
 	border: 2px solid var(--light-300);
+	position: relative;
 
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -275,6 +277,18 @@ fieldset input[type="radio"]:checked + label {
 	border: 4px solid var(--accent-3);
 }
 
+fieldset input[type="radio"]:focus-visible + label::before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	height: 90%;
+	border: 4px solid var(--accent-2);
+	border-radius: 1rem;
+}
+
 fieldset input {
 	appearance: none;
 	-webkit-appearance: none;
@@ -294,6 +308,11 @@ details > summary {
 	list-style: none;
 	padding-bottom: 1rem;
 	padding-left: 2rem;
+}
+
+/* hide default details arrow */
+details > summary::-webkit-details-marker {
+	display: none;
 }
 
 details::before {
@@ -348,18 +367,18 @@ input[type="file"] {
 	position: relative;
 }
 
-input[type="file"] + label {
-/* File upload button styles */
-	display: none;
-}
+/* style input type color */
 
-input[type="file"]:focus + label,
-input[type="file"] + label:hover {
-/* File upload hover state button styles */
-}
-
-input[type="file"]:focus + label {
-/* File upload focus state button styles */
+input[type="color"] {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 100%;
+	height: 2rem;
+	border: none;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	position: relative;
 }
 
 
@@ -482,7 +501,7 @@ input[type="file"]:focus + label {
 
 .orders section > div figure figcaption {
 	font-size: .7rem;
-	top: 30%;
+	top: 28%;
 }
 
 .orders section > div figure img {
@@ -533,6 +552,7 @@ input[type="file"]:focus + label {
 	display: flex;
 	align-items: center;
 	margin-left: 0;
+	position: relative;
 
 	padding: 1rem;
 	border: 2px solid var(--light-300);
@@ -542,6 +562,18 @@ input[type="file"]:focus + label {
 
 .deliveryForm > input[type="radio"]:checked + label {
 	border: 2px solid var(--accent-3);
+}
+
+.deliveryForm > input[type="radio"]:focus-visible + label::before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 10	0%;
+	border: 4px solid var(--accent-2);
+	border-radius: 1rem;
 }
 
 /* ---------------------------------- */
