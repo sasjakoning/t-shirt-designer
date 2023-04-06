@@ -5,13 +5,15 @@ A simple not-entirely-functional t-shirt designer webapp made for the course Bro
 
 <br>
 
-<img src="images-readme/design-1.png" alt="design" width="80"/>
-<img src="images-readme/design-2.png" alt="design" width="80"/>
-<img src="images-readme/design-3.png" alt="design" width="80"/>
-<img src="images-readme/design-4.png" alt="design" width="80"/>
-<img src="images-readme/design-5.png" alt="design" width="80"/>
-<img src="images-readme/design-6.png" alt="design" width="80"/>
-<img src="images-readme/design-7.png" alt="design" width="80"/>
+<div style="display: flex;">
+  <img src="images-readme/design-1.png" alt="design" width="80"/>
+  <img src="images-readme/design-2.png" alt="design" width="80"/>
+  <img src="images-readme/design-3.png" alt="design" width="80"/>
+  <img src="images-readme/design-4.png" alt="design" width="80"/>
+  <img src="images-readme/design-5.png" alt="design" width="80"/>
+  <img src="images-readme/design-6.png" alt="design" width="80"/>
+  <img src="images-readme/design-7.png" alt="design" width="80"/>
+</div>
 
 ## Live demo
 
@@ -28,11 +30,18 @@ This webapp is made using pure vanilla html/css and Javascript. To run it, you c
 ## Table of Contents
 
 - [T-shirt Designer](#t-shirt-designer)
+  - [Live demo](#live-demo)
+  - [Installation](#installation)
+  - [Table of Contents](#table-of-contents)
   - [Process](#process)
     - [User Story](#user-story)
     - [Requirements](#requirements)
     - [Core functionality](#core-functionality)
     - [Flowchart](#flowchart)
+    - [Testing](#testing)
+    - [Feature detections](#feature-detections)
+    - [Server-side](#server-side)
+    - [No CSS](#no-css)
     - [Feedback session 1](#feedback-session-1)
     - [Feedback session 2](#feedback-session-2)
   - [Sources](#sources)
